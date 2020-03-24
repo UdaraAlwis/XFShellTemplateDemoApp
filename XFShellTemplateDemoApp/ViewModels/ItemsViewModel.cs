@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
-
+using XFShellTemplateDemoApp.Infrastructure;
 using XFShellTemplateDemoApp.Models;
 using XFShellTemplateDemoApp.Views;
 

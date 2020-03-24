@@ -18,13 +18,13 @@ namespace XFShellTemplateDemoApp.Views
     [DesignTimeVisible(false)]
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel viewModel;
+        private readonly ItemsViewModel _viewModel;
 
         public ItemsPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = _viewModel = new ItemsViewModel();
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -48,8 +48,8 @@ namespace XFShellTemplateDemoApp.Views
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+            if (_viewModel.Items.Count == 0)
+                _viewModel.LoadItemsCommand.Execute(null);
         }
     }
 }

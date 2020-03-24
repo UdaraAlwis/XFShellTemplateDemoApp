@@ -1,5 +1,5 @@
 ﻿using System;
-
+using XFShellTemplateDemoApp.Infrastructure;
 using XFShellTemplateDemoApp.Models;
 
 namespace XFShellTemplateDemoApp.ViewModels
