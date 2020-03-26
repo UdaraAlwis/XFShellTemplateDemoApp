@@ -1,7 +1,6 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using XFShellTemplateDemoApp.ViewModels;
 
 namespace XFShellTemplateDemoApp.Views
 {
@@ -10,9 +9,13 @@ namespace XFShellTemplateDemoApp.Views
     [DesignTimeVisible(false)]
     public partial class AboutPage : ContentPage
     {
+        private readonly AboutViewModel _viewModel;
+
         public AboutPage()
         {
             InitializeComponent();
+
+            BindingContext = _viewModel = new AboutViewModel();
         }
     }
 }
