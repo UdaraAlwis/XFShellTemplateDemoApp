@@ -1,8 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using Xamarin.Forms;
-using XFShellTemplateDemoApp.Models;
-using XFShellTemplateDemoApp.Services;
 using XFShellTemplateDemoApp.ViewModels;
 
 namespace XFShellTemplateDemoApp.Views
@@ -10,7 +8,7 @@ namespace XFShellTemplateDemoApp.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    [QueryProperty("ItemId", "itemid")]
+    [QueryProperty(nameof(ItemId), "itemid")]
     public partial class ItemDetailPage : ContentPage
     {
         private readonly ItemDetailViewModel _viewModel;
@@ -29,7 +27,7 @@ namespace XFShellTemplateDemoApp.Views
             BindingContext = _viewModel = new ItemDetailViewModel();
         }
 
-        protected async override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
 

@@ -21,6 +21,7 @@ namespace XFShellTemplateDemoApp.Views
 
             Item = new Item
             {
+                Id = Guid.NewGuid().ToString(),
                 Text = "Item name",
                 Description = "This is an item description."
             };

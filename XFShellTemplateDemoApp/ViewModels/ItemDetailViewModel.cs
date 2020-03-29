@@ -13,9 +13,9 @@ namespace XFShellTemplateDemoApp.ViewModels
         public Item Item
         {
             get => _item;
-            private set
-            {
-                _item = value;
+            private set 
+            { 
+                SetProperty(ref _item, value);
                 Title = _item?.Text;
             }
         }
@@ -26,6 +26,7 @@ namespace XFShellTemplateDemoApp.ViewModels
         {
             var item = new Item
             {
+                Id = Guid.NewGuid().ToString(),
                 Text = "Sample Item",
                 Description = "This is an item description."
             };

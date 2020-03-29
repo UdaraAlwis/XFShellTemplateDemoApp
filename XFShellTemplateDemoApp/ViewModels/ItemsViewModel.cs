@@ -21,7 +21,7 @@ namespace XFShellTemplateDemoApp.ViewModels
             Title = "Browse";
             Items = new ObservableCollection<Item>();
 
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            LoadItemsCommand = new Command(async () => await LoadItems());
 
             MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             {
@@ -31,7 +31,7 @@ namespace XFShellTemplateDemoApp.ViewModels
             });
         }
 
-        async Task ExecuteLoadItemsCommand()
+        private async Task LoadItems()
         {
             if (IsBusy)
                 return;

@@ -26,7 +26,7 @@ namespace XFShellTemplateDemoApp.Views
             if (item == null)
                 return;
 
-            await Navigation.PushAsync(new ItemDetailPage());
+            await Shell.Current.GoToAsync($"/itemdetailpage?itemid={item.Id.ToString()}");
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;
@@ -34,6 +34,8 @@ namespace XFShellTemplateDemoApp.Views
 
         private async void AddItem_Clicked(object sender, EventArgs e)
         {
+            //await Shell.Current.GoToAsync($"/newitempage");
+
             await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
         }
 

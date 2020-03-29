@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using XFShellTemplateDemoApp.Views;
 
 namespace XFShellTemplateDemoApp
 {
@@ -10,6 +11,9 @@ namespace XFShellTemplateDemoApp
         public AppShell()
         {
             InitializeComponent();
+
+            Routing.RegisterRoute("itemdetailpage", typeof(ItemDetailPage));
+            Routing.RegisterRoute("newitempage", typeof(NewItemPage));
         }
     }
 }
