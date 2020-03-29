@@ -1,6 +1,8 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using Xamarin.Forms;
 using XFShellTemplateDemoApp.Models;
+using XFShellTemplateDemoApp.Services;
 using XFShellTemplateDemoApp.ViewModels;
 
 namespace XFShellTemplateDemoApp.Views
@@ -8,29 +10,30 @@ namespace XFShellTemplateDemoApp.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
+    [QueryProperty("ItemId", "itemid")]
     public partial class ItemDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
+        private readonly ItemDetailViewModel _viewModel;
+        private string _itemId;
 
-        public ItemDetailPage(ItemDetailViewModel viewModel)
+        public string ItemId
         {
-            InitializeComponent();
-
-            BindingContext = this.viewModel = viewModel;
+            get => _itemId;
+            set => _itemId = Uri.UnescapeDataString(value);
         }
 
         public ItemDetailPage()
         {
             InitializeComponent();
 
-            var item = new Item
-            {
-                Text = "Item 1",
-                Description = "This is an item description."
-            };
+            BindingContext = _viewModel = new ItemDetailViewModel();
+        }
 
-            viewModel = new ItemDetailViewModel(item);
-            BindingContext = viewModel;
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            _viewModel.LoadItemCommand.Execute(ItemId);
         }
     }
 }
