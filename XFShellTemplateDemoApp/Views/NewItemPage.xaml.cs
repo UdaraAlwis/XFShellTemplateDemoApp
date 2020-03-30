@@ -23,15 +23,15 @@ namespace XFShellTemplateDemoApp.Views
             BindingContext = _viewModel = new NewItemViewModel();
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
+        private async void Save_Clicked(object sender, EventArgs e)
         {
             MessagingCenter.Send(this, "AddItem", _viewModel.Item);
-            await Navigation.PopModalAsync();
+            await Shell.Current.Navigation.PopModalAsync();
         }
 
-        async void Cancel_Clicked(object sender, EventArgs e)
+        private async void Cancel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            await Shell.Current.Navigation.PopModalAsync();
         }
     }
 }
