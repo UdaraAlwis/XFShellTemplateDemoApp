@@ -12,7 +12,7 @@
         <Label FontSize="Medium" Text="Text:" />
         <Label
             d:Text="Item name"
-            FontSize="Small"
+            FontSize="Medium"
             Text="{Binding Item.Text}" />
         <Label FontSize="Medium" Text="Description:" />
         <Label

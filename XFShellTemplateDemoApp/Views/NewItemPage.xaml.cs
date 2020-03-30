@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using XFShellTemplateDemoApp.Models;
+using XFShellTemplateDemoApp.ViewModels;
 
 namespace XFShellTemplateDemoApp.Views
 {
@@ -13,25 +14,18 @@ namespace XFShellTemplateDemoApp.Views
     [DesignTimeVisible(false)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        private readonly NewItemViewModel _viewModel;
 
         public NewItemPage()
         {
             InitializeComponent();
 
-            Item = new Item
-            {
-                Id = Guid.NewGuid().ToString(),
-                Text = "Item name",
-                Description = "This is an item description."
-            };
-
-            BindingContext = this;
+            BindingContext = _viewModel = new NewItemViewModel();
         }
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            MessagingCenter.Send(this, "AddItem", _viewModel.Item);
             await Navigation.PopModalAsync();
         }
 
