@@ -7,7 +7,7 @@ Blog post: https://theconfuzedsourcecode.wordpress.com/2020/03/31/restructuring-
 
 The goal here is to adopt only Xamarin.Forms Shell related implementation, features, and practices into the default Template, so it gives a clear, easy to understand, straight forward view of using Xamairn.Forms Shell to build apps. Thinking in terms of simplest terms, decoupled components with clean and readable code, we need to reflect the best practices of Xamarin.Forms in the Template. ;) 
 
-Step: 
+Step by step: 
  - Step 1: Cleaning up Colors and Styles…
  - Step 2: BaseViewModel to Infrastructure!
  - Step 3: BindingContext in the Constructor()
