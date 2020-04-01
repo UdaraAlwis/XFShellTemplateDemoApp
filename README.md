@@ -3,7 +3,7 @@ Restructured Xamarin.Forms Shell App Template...
 
 Let’s restructure the default project Template for Xamarin.Forms Shell Apps provided by Visual Studio 2019, clean it up, optimize it for the best use of Shell features. ;)
 
-Blog post: https://theconfuzedsourcecode.wordpress.com/2020/03/31/restructuring-the-xamarin-forms-shell-default-app-template/
+Blog post: https://theconfuzedsourcecode.wordpress.com/2020/04/01/restructuring-the-xamarin-forms-shell-default-app-template/
 
 The goal here is to adopt only Xamarin.Forms Shell related implementation, features, and practices into the default Template, so it gives a clear, easy to understand, straight forward view of using Xamairn.Forms Shell to build apps. Thinking in terms of simplest terms, decoupled components with clean and readable code, we need to reflect the best practices of Xamarin.Forms in the Template. ;) 
 
